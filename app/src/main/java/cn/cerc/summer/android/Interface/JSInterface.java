@@ -6,16 +6,32 @@ import android.webkit.JavascriptInterface;
 import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONException;
+import com.alibaba.fastjson.JSONObject;
 import com.tencent.mm.sdk.modelmsg.SendAuth;
 import com.tencent.mm.sdk.modelpay.PayReq;
 import com.tencent.mm.sdk.openapi.IWXAPI;
 import com.tencent.mm.sdk.openapi.WXAPIFactory;
 
+import org.xutils.http.annotation.HttpResponse;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 import cn.cerc.summer.android.MyApplication;
 import cn.cerc.summer.android.MyConfig;
 import cn.cerc.summer.android.Utils.AppUtil;
+
+import static java.lang.System.in;
+import static java.net.Proxy.Type.HTTP;
 
 /**
  * 供js调用的js
@@ -28,7 +44,7 @@ public class JSInterface extends Object {
 
     private JSInterfaceLintener jsInterfaceLintener;
 
-    public JSInterface(JSInterfaceLintener jsInterfaceLintener) {
+    public JSInterface(JSInterfaceLintener jsInterfaceLintener) throws IOException {
         this.jsInterfaceLintener = jsInterfaceLintener;
     }
 
@@ -227,6 +243,49 @@ public class JSInterface extends Object {
     public void openAd(String url){
         jsInterfaceLintener.openAd(url);
     }
+
+    /**
+     *
+     * 获取图表URL
+     */
+    @JavascriptInterface
+
+
+
+
+
+//客户端从服务器端获取json数据
+    //利用HttpUrlConnection
+    /**
+     * 从指定的URL中获取数组
+     * @param urlPath
+     * @return
+     * @throws Exception
+     */
+    public static String readParse(String urlPath) throws Exception {
+        ByteArrayOutputStream outStream = new ByteArrayOutputStream();
+        byte[] data = new byte[1024];
+        int len = 0;
+        URL url = new URL("http://ehealth.lucland.com/forms/introduce");
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        InputStream inStream = conn.getInputStream();
+        while ((len = inStream.read(data)) != -1) {
+            outStream.write(data, 0, len);
+        }
+        inStream.close();
+        return new String(outStream.toByteArray());//通过out.Stream.toByteArray获取到写的数据
+    }
+
+
+
+    /**
+     * json数据解析
+     *
+     * @throws JSONException
+     */
+
+
+
 
 
 }

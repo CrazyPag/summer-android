@@ -6,16 +6,67 @@
         android:name="com.huagu.ehealth.permission.JPUSH_MESSAGE"
         android:protectionLevel="signature" />
 
+    <!--  支付宝支付  所需权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
 
+
+
+    <!--  银联支付  所需权限 -->
+    <uses-permission
+        android:name="android.permission.INTERNET" />
+    <uses-permission
+        android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission
+        android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"
+        /> <uses-permission
+    android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 如果选择智能卡方式(即sdkPro)集成，需要额外定义以下权限 -->
+    <uses-permission
+        android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission
+        android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission
+        android:name="org.simalliance.openmobileapi.SMARTCARD" />
+
+
+
+
+
+    <!--  拨打电话  所需权限 -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+
+
+
+    <!--  读取通讯录  所需权限 -->
+    <uses-permission android:name="android.permission.READ_CONTACTS"/><!-- 读取通讯录权限 -->
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/><!-- 写入通讯录权限 -->
 
 
 
     <!--  微信登录  所需权限  -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
 
 
-    <!--  微信登录  activity配置  -->
+    <!--  QQ登录  所需权限  -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+
+
 
 
 
@@ -77,14 +128,6 @@
         <activity
             android:name="cn.cerc.summer.android.Activity.AdActivity"
             android:screenOrientation="portrait"></activity>
-        <activity
-            android:name=".wxapi.WXPayEntryActivity"
-            android:exported="true"
-            android:launchMode="singleTop" />
-        <activity android:name=".wxapi.WXEntryActivity"
-            android:exported="true"
-            android:launchMode="singleTop"
-            />
 
         <meta-data
             android:name="android.webkit.WebView.MetricsOptOut"

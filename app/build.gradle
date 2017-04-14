@@ -35,14 +35,14 @@ android {
     }
     signingConfigs {
         release {
-            storeFile file("D:/studio_workspace/summer-android/huagu.jks")
+            storeFile file("C:/git/summer-android/huagu.jks")
             storePassword '123456'
             keyAlias 'ejiankang'
             keyPassword '123456'
         }
 
         debug {
-            storeFile file("D:/studio_workspace/summer-android/huagu.jks")
+            storeFile file("C:/git/summer-android/huagu.jks")
             storePassword '123456'
             keyAlias 'ejiankang'
             keyPassword '123456'
@@ -66,6 +66,8 @@ android {
 //        uc {
 //            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "uc"]
 //        }
+
+
     }
 
 }
