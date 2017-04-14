@@ -75,6 +75,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.File;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -294,7 +295,11 @@ public class MainActivity extends BaseActivity implements View.OnLongClickListen
 //        webview.getSettings().setUseWideViewPort(true);
 
         //登陆和退出的js调用回调(接口：JSInterfaceLintener 方法：1.LoginOrLogout 2.Action)
-        webview.addJavascriptInterface(new JSInterface(this), "JSobj");//JSobj 供web端js调用标识，修改请通知web开发者
+        try {
+            webview.addJavascriptInterface(new JSInterface(this), "JSobj");//JSobj 供web端js调用标识，修改请通知web开发者
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
 //        统计sdk
         MobclickAgent.setDebugMode(true);

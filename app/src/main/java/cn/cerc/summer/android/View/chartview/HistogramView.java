@@ -25,26 +25,26 @@ import com.huagu.ehealth.R;
 
 /**
  *
- * Öù×´Í¼»æÖÆ
+ * æŸ±çŠ¶å›¾ç»˜åˆ¶
  */
 
 public class HistogramView  extends View{
 
-    private Paint xLinePaint;// ×ø±êÖá ÖáÏß »­±Ê£º
-    private Paint hLinePaint;// ×ø±êÖáË®Æ½ÄÚ²¿ ĞéÏß»­±Ê
-    private Paint titlePaint;// »æÖÆÎÄ±¾µÄ»­±Ê
-    private Paint paint;// ¾ØĞÎ»­±Ê Öù×´Í¼µÄÑùÊ½ĞÅÏ¢
+    private Paint xLinePaint;// åæ ‡è½´ è½´çº¿ ç”»ç¬”ï¼š
+    private Paint hLinePaint;// åæ ‡è½´æ°´å¹³å†…éƒ¨ è™šçº¿ç”»ç¬”
+    private Paint titlePaint;// ç»˜åˆ¶æ–‡æœ¬çš„ç”»ç¬”
+    private Paint paint;// çŸ©å½¢ç”»ç¬” æŸ±çŠ¶å›¾çš„æ ·å¼ä¿¡æ¯
     private int[] progress = { 2000, 5000, 6000, 8000, 500, 6000, 9000 };// 7
-    // Ìõ£¬ÏÔÊ¾¸÷¸öÖù×´µÄÊı¾İ
-    private int[] aniProgress;// ÊµÏÖ¶¯»­µÄÖµ
-    private final int TRUE = 1;// ÔÚÖù×´Í¼ÉÏÏÔÊ¾Êı×Ö
-    private int[] text;// ÉèÖÃµã»÷ÊÂ¼ş£¬ÏÔÊ¾ÄÄÒ»ÌõÖù×´µÄĞÅÏ¢
+    // æ¡ï¼Œæ˜¾ç¤ºå„ä¸ªæŸ±çŠ¶çš„æ•°æ®
+    private int[] aniProgress;// å®ç°åŠ¨ç”»çš„å€¼
+    private final int TRUE = 1;// åœ¨æŸ±çŠ¶å›¾ä¸Šæ˜¾ç¤ºæ•°å­—
+    private int[] text;// è®¾ç½®ç‚¹å‡»äº‹ä»¶ï¼Œæ˜¾ç¤ºå“ªä¸€æ¡æŸ±çŠ¶çš„ä¿¡æ¯
     private Bitmap bitmap;
-    // ×ø±êÖá×ó²àµÄÊı±ê
+    // åæ ‡è½´å·¦ä¾§çš„æ•°æ ‡
     private String[] ySteps;
-    // ×ø±êÖáµ×²¿µÄĞÇÆÚÊı
+    // åæ ‡è½´åº•éƒ¨çš„æ˜ŸæœŸæ•°
     private String[] xWeeks;
-    private int flag;// ÊÇ·ñÊ¹ÓÃ¶¯»­
+    private int flag;// æ˜¯å¦ä½¿ç”¨åŠ¨ç”»
 
     private HistogramAnimation ani;
 
@@ -72,12 +72,12 @@ public class HistogramView  extends View{
         titlePaint = new Paint();
         paint = new Paint();
 
-        // ¸ø»­±ÊÉèÖÃÑÕÉ«
+        // ç»™ç”»ç¬”è®¾ç½®é¢œè‰²
         xLinePaint.setColor(Color.DKGRAY);
         hLinePaint.setColor(Color.LTGRAY);
         titlePaint.setColor(Color.BLACK);
 
-        // ¼ÓÔØ»­Í¼
+        // åŠ è½½ç”»å›¾
         bitmap = BitmapFactory
                 .decodeResource(getResources(), R.drawable.point_color);
     }
@@ -94,53 +94,53 @@ public class HistogramView  extends View{
 
         int width = getWidth();
         int height = getHeight() - dp2px(50);
-        // »æÖÆµ×²¿µÄÏßÌõ
+        // ç»˜åˆ¶åº•éƒ¨çš„çº¿æ¡
         canvas.drawLine(dp2px(30), height + dp2px(3), width - dp2px(30), height
                 + dp2px(3), xLinePaint);
 
-        int leftHeight = height - dp2px(5);// ×ó²àÍâÖÜµÄ ĞèÒª»®·ÖµÄ¸ß¶È£º
+        int leftHeight = height - dp2px(5);// å·¦ä¾§å¤–å‘¨çš„ éœ€è¦åˆ’åˆ†çš„é«˜åº¦ï¼š
 
-        int hPerHeight = leftHeight / 4;// ·Ö³ÉËÄ²¿·Ö
+        int hPerHeight = leftHeight / 4;// åˆ†æˆå››éƒ¨åˆ†
 
         hLinePaint.setTextAlign(Align.CENTER);
-        // ÉèÖÃËÄÌõĞéÏß
+        // è®¾ç½®å››æ¡è™šçº¿
         for (int i = 0; i < 4; i++) {
             canvas.drawLine(dp2px(30), dp2px(10) + i * hPerHeight, width
                     - dp2px(30), dp2px(10) + i * hPerHeight, hLinePaint);
         }
 
-        // »æÖÆ Y ÖÜ×ø±ê
+        // ç»˜åˆ¶ Y å‘¨åæ ‡
         titlePaint.setTextAlign(Align.RIGHT);
         titlePaint.setTextSize(sp2px(12));
         titlePaint.setAntiAlias(true);
         titlePaint.setStyle(Paint.Style.FILL);
-        // ÉèÖÃ×ó²¿µÄÊı×Ö
+        // è®¾ç½®å·¦éƒ¨çš„æ•°å­—
         for (int i = 0; i < ySteps.length; i++) {
             canvas.drawText(ySteps[i], dp2px(25), dp2px(13) + i * hPerHeight,
                     titlePaint);
         }
 
-        // »æÖÆ X ÖÜ ×ö×ø±ê
+        // ç»˜åˆ¶ X å‘¨ åšåæ ‡
         int xAxisLength = width - dp2px(30);
         int columCount = xWeeks.length + 1;
         int step = xAxisLength / columCount;
 
-        // ÉèÖÃµ×²¿µÄÊı×Ö
+        // è®¾ç½®åº•éƒ¨çš„æ•°å­—
         for (int i = 0; i < columCount - 1; i++) {
             // text, baseX, baseY, textPaint
             canvas.drawText(xWeeks[i], dp2px(25) + step * (i + 1), height
                     + dp2px(20), titlePaint);
         }
 
-        // »æÖÆ¾ØĞÎ
+        // ç»˜åˆ¶çŸ©å½¢
         if (aniProgress != null && aniProgress.length > 0) {
-            for (int i = 0; i < aniProgress.length; i++) {// Ñ­»·±éÀú½«7ÌõÖù×´Í¼ĞÎ»­³öÀ´
+            for (int i = 0; i < aniProgress.length; i++) {// å¾ªç¯éå†å°†7æ¡æŸ±çŠ¶å›¾å½¢ç”»å‡ºæ¥
                 int value = aniProgress[i];
-                paint.setAntiAlias(true);// ¿¹¾â³İĞ§¹û
+                paint.setAntiAlias(true);// æŠ—é”¯é½¿æ•ˆæœ
                 paint.setStyle(Paint.Style.FILL);
-                paint.setTextSize(sp2px(15));// ×ÖÌå´óĞ¡
-                paint.setColor(Color.parseColor("#6DCAEC"));// ×ÖÌåÑÕÉ«
-                Rect rect = new Rect();// Öù×´Í¼µÄĞÎ×´
+                paint.setTextSize(sp2px(15));// å­—ä½“å¤§å°
+                paint.setColor(Color.parseColor("#6DCAEC"));// å­—ä½“é¢œè‰²
+                Rect rect = new Rect();// æŸ±çŠ¶å›¾çš„å½¢çŠ¶
 
                 rect.left = step * (i + 1);
                 rect.right = dp2px(30) + step * (i + 1);
@@ -149,7 +149,7 @@ public class HistogramView  extends View{
                 rect.bottom = height;
 
                 canvas.drawBitmap(bitmap, null, rect, paint);
-                // ÊÇ·ñÏÔÊ¾Öù×´Í¼ÉÏ·½µÄÊı×Ö
+                // æ˜¯å¦æ˜¾ç¤ºæŸ±çŠ¶å›¾ä¸Šæ–¹çš„æ•°å­—
                 if (this.text[i] == TRUE) {
                     canvas.drawText(value + "", dp2px(15) + step * (i + 1)
                             - dp2px(15), rh + dp2px(5), paint);
@@ -171,7 +171,7 @@ public class HistogramView  extends View{
     }
 
     /**
-     * ÉèÖÃµã»÷ÊÂ¼ş£¬ÊÇ·ñÏÔÊ¾Êı×Ö
+     * è®¾ç½®ç‚¹å‡»äº‹ä»¶ï¼Œæ˜¯å¦æ˜¾ç¤ºæ•°å­—
      */
     public boolean onTouchEvent(MotionEvent event) {
         int step = (getWidth() - dp2px(30)) / 8;
@@ -196,7 +196,7 @@ public class HistogramView  extends View{
     }
 
     /**
-     * ¼¯³ÉanimationµÄÒ»¸ö¶¯»­Àà
+     * é›†æˆanimationçš„ä¸€ä¸ªåŠ¨ç”»ç±»
      *
      * @author
      */

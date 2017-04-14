@@ -18,11 +18,11 @@ import java.util.List;
  * Created by admin on 2017/4/14.
  */
 /**
- * Í¼±íActivity
- * Á½¸ö×Ô¶¨ÒåViewÀà
- * LineChartViewÕÛÏßÍ¼Àà
- * HistogramViewÖù×´Í¼Àà
- * Ò»¸öActivityÖĞÇ¶Ì×ÁËÁ½¸öfragment(v4)£¬ÊÇÓÃviewpager¶ÔÒ³Ãæ½øĞĞ»¬¶¯
+ * å›¾è¡¨Activity
+ * ä¸¤ä¸ªè‡ªå®šä¹‰Viewç±»
+ * LineChartViewæŠ˜çº¿å›¾ç±»
+ * HistogramViewæŸ±çŠ¶å›¾ç±»
+ * ä¸€ä¸ªActivityä¸­åµŒå¥—äº†ä¸¤ä¸ªfragment(v4)ï¼Œæ˜¯ç”¨viewpagerå¯¹é¡µé¢è¿›è¡Œæ»‘åŠ¨
  *
  */
 
@@ -32,7 +32,7 @@ public class ChartActivity extends FragmentActivity {
     private ViewPager viewPager;
     private List<Fragment> fragments;
     private FragmentPagerAdapter adapter;
-    // ÉèÖÃÊÇ·ñÏÔÊ¾¶¯»­£¬ÎªÁË·ÀÖ¹ÔÚ´´½¨Ê±¾Í¿ªÆô¶¯»­£¬ÓÃÒÔÏÂÁ½¸ö²ÎÊı×öÁËÅĞ¶Ï£¬Ö»ÓĞµ±¿´µ½ÊÓÍ¼ºó²Å»áÏÔÊ¾¶¯»­
+    // è®¾ç½®æ˜¯å¦æ˜¾ç¤ºåŠ¨ç”»ï¼Œä¸ºäº†é˜²æ­¢åœ¨åˆ›å»ºæ—¶å°±å¼€å¯åŠ¨ç”»ï¼Œç”¨ä»¥ä¸‹ä¸¤ä¸ªå‚æ•°åšäº†åˆ¤æ–­ï¼Œåªæœ‰å½“çœ‹åˆ°è§†å›¾åæ‰ä¼šæ˜¾ç¤ºåŠ¨ç”»
     public static int flag1 = 2;
     public static int flag2 = 1;
 
@@ -44,12 +44,12 @@ public class ChartActivity extends FragmentActivity {
     }
 
     private void initView() {
-      //  viewPager = (ViewPager) findViewById(R.id.record_viewpager);
+        //  viewPager = (ViewPager) findViewById(R.id.record_viewpager);
         fragments = new ArrayList<Fragment>();
-     //   RecordPager1 recordPager1 = new RecordPager1();
-      //  RecordPager2 recordPager2 = new RecordPager2();
-      //  fragments.add(recordPager1);
-       // fragments.add(recordPager2);
+        //   RecordPager1 recordPager1 = new RecordPager1();
+        //  RecordPager2 recordPager2 = new RecordPager2();
+        //  fragments.add(recordPager1);
+        // fragments.add(recordPager2);
 
         adapter = new FragmentPagerAdapter(getSupportFragmentManager()) {
             @Override

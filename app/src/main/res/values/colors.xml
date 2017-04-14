@@ -2,14 +2,22 @@
 <resources>
 
 
-
-
-
-
-
-    <color name="colorPrimary">#48b2bd</color>
-    <color name="colorPrimaryDark">#272727</color>
+    <!--  读取通讯录  -->
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="add_green">#16A951</color>
+    <color name="add_text">#E7F8F7</color>
+    <color name="rule">#E2E2DE</color>
+    <color name="addNew_bg">#F5E6BE</color>
+    <color name="phone_color">#27AE5D</color>
+    <color name="delete">#6AC7E9</color>
+
+
+
+
+
+
     <color name="theme">#48b2bd</color>
     <color name="backgroup">#F0F0F0</color>
 </resources>

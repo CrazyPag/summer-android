@@ -22,7 +22,7 @@ public class OrderInfoUtil2_0 {
 
 
     /**
-     * ¹¹ÔìÊÚÈ¨²ÎÊıÁĞ±í
+     * æ„é€ æˆæƒå‚æ•°åˆ—è¡¨
      *
      * @param pid
      * @param app_id
@@ -32,41 +32,41 @@ public class OrderInfoUtil2_0 {
     public static Map<String, String> buildAuthInfoMap(String pid, String app_id, String target_id, boolean rsa2) {
         Map<String, String> keyValues = new HashMap<String, String>();
 
-        // ÉÌ»§Ç©Ô¼ÄÃµ½µÄapp_id£¬Èç£º2013081700024223
+        // å•†æˆ·ç­¾çº¦æ‹¿åˆ°çš„app_idï¼Œå¦‚ï¼š2013081700024223
         keyValues.put("app_id", app_id);
 
-        // ÉÌ»§Ç©Ô¼ÄÃµ½µÄpid£¬Èç£º2088102123816631
+        // å•†æˆ·ç­¾çº¦æ‹¿åˆ°çš„pidï¼Œå¦‚ï¼š2088102123816631
         keyValues.put("pid", pid);
 
-        // ·şÎñ½Ó¿ÚÃû³Æ£¬ ¹Ì¶¨Öµ
+        // æœåŠ¡æ¥å£åç§°ï¼Œ å›ºå®šå€¼
         keyValues.put("apiname", "com.alipay.account.auth");
 
-        // ÉÌ»§ÀàĞÍ±êÊ¶£¬ ¹Ì¶¨Öµ
+        // å•†æˆ·ç±»å‹æ ‡è¯†ï¼Œ å›ºå®šå€¼
         keyValues.put("app_name", "mc");
 
-        // ÒµÎñÀàĞÍ£¬ ¹Ì¶¨Öµ
+        // ä¸šåŠ¡ç±»å‹ï¼Œ å›ºå®šå€¼
         keyValues.put("biz_type", "openservice");
 
-        // ²úÆ·Âë£¬ ¹Ì¶¨Öµ
+        // äº§å“ç ï¼Œ å›ºå®šå€¼
         keyValues.put("product_id", "APP_FAST_LOGIN");
 
-        // ÊÚÈ¨·¶Î§£¬ ¹Ì¶¨Öµ
+        // æˆæƒèŒƒå›´ï¼Œ å›ºå®šå€¼
         keyValues.put("scope", "kuaijie");
 
-        // ÉÌ»§Î¨Ò»±êÊ¶£¬Èç£ºkkkkk091125
+        // å•†æˆ·å”¯ä¸€æ ‡è¯†ï¼Œå¦‚ï¼škkkkk091125
         keyValues.put("target_id", target_id);
 
-        // ÊÚÈ¨ÀàĞÍ£¬ ¹Ì¶¨Öµ
+        // æˆæƒç±»å‹ï¼Œ å›ºå®šå€¼
         keyValues.put("auth_type", "AUTHACCOUNT");
 
-        // Ç©ÃûÀàĞÍ
+        // ç­¾åç±»å‹
         keyValues.put("sign_type", rsa2 ? "RSA2" : "RSA");
 
         return keyValues;
     }
 
     /**
-     * ¹¹ÔìÖ§¸¶¶©µ¥²ÎÊıÁĞ±í
+     * æ„é€ æ”¯ä»˜è®¢å•å‚æ•°åˆ—è¡¨
      * @param pid
      * @param app_id
      * @param target_id
@@ -77,7 +77,7 @@ public class OrderInfoUtil2_0 {
 
         keyValues.put("app_id", app_id);
 
-        keyValues.put("biz_content", "{\"timeout_express\":\"30m\",\"product_code\":\"QUICK_MSECURITY_PAY\",\"total_amount\":\"0.01\",\"subject\":\"1\",\"body\":\"ÎÒÊÇ²âÊÔÊı¾İ\",\"out_trade_no\":\"" + getOutTradeNo() +  "\"}");
+        keyValues.put("biz_content", "{\"timeout_express\":\"30m\",\"product_code\":\"QUICK_MSECURITY_PAY\",\"total_amount\":\"0.01\",\"subject\":\"1\",\"body\":\"æˆ‘æ˜¯æµ‹è¯•æ•°æ®\",\"out_trade_no\":\"" + getOutTradeNo() +  "\"}");
 
         keyValues.put("charset", "utf-8");
 
@@ -93,10 +93,10 @@ public class OrderInfoUtil2_0 {
     }
 
     /**
-     * ¹¹ÔìÖ§¸¶¶©µ¥²ÎÊıĞÅÏ¢
+     * æ„é€ æ”¯ä»˜è®¢å•å‚æ•°ä¿¡æ¯
      *
      * @param map
-     * Ö§¸¶¶©µ¥²ÎÊı
+     * æ”¯ä»˜è®¢å•å‚æ•°
      * @return
      */
     public static String buildOrderParam(Map<String, String> map) {
@@ -118,7 +118,7 @@ public class OrderInfoUtil2_0 {
     }
 
     /**
-     * Æ´½Ó¼üÖµ¶Ô
+     * æ‹¼æ¥é”®å€¼å¯¹
      *
      * @param key
      * @param value
@@ -142,16 +142,16 @@ public class OrderInfoUtil2_0 {
     }
 
     /**
-     * ¶ÔÖ§¸¶²ÎÊıĞÅÏ¢½øĞĞÇ©Ãû
+     * å¯¹æ”¯ä»˜å‚æ•°ä¿¡æ¯è¿›è¡Œç­¾å
      *
      * @param map
-     *            ´ıÇ©ÃûÊÚÈ¨ĞÅÏ¢
+     *            å¾…ç­¾åæˆæƒä¿¡æ¯
      *
      * @return
      */
     public static String getSign(Map<String, String> map, String rsaKey, boolean rsa2) {
         List<String> keys = new ArrayList<String>(map.keySet());
-        // keyÅÅĞò
+        // keyæ’åº
         Collections.sort(keys);
 
         StringBuilder authInfo = new StringBuilder();
@@ -178,7 +178,7 @@ public class OrderInfoUtil2_0 {
     }
 
     /**
-     * ÒªÇóÍâ²¿¶©µ¥ºÅ±ØĞëÎ¨Ò»¡£
+     * è¦æ±‚å¤–éƒ¨è®¢å•å·å¿…é¡»å”¯ä¸€ã€‚
      * @return
      */
     private static String getOutTradeNo() {

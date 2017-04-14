@@ -36,7 +36,7 @@ public class CallphoneActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (etPhone.getText().toString().trim() == null || etPhone.getText().toString().trim().equals("")) {
-                    Toast.makeText(CallphoneActivity.this, "对不起，电话不能为空", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CallphoneActivity.this, "瀵逛笉璧凤紝鐢佃瘽涓嶈兘涓虹┖", Toast.LENGTH_SHORT).show();
                     return;
                 } else if (etPhone.getText().toString().trim() != null && !(etPhone.getText().toString().trim().equals(""))) {
                     Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:"
