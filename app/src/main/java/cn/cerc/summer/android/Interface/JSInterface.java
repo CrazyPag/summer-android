@@ -249,9 +249,9 @@ public class JSInterface extends Object {
      * 获取图表URL
      */
     @JavascriptInterface
-
-
-
+    public void tabledata(String json){
+        jsInterfaceLintener.Action(json,"TABLE");
+    }
 
 
 //客户端从服务器端获取json数据

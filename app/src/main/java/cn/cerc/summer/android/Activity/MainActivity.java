@@ -846,6 +846,8 @@ public class MainActivity extends BaseActivity implements View.OnLongClickListen
         }else if("LoginWx".equals(action)){
             String Requrl ="https://api.weixin.qq.com/sns/oauth2/access_token?appid="+MyConfig.WX_appId+"&secret="+MyConfig.WX_Secret+"&code="+json+"&grant_type=authorization_code";
 					XHttpRequest.getInstance().GET(Requrl, this);
+        }else if("TABLE".equals(action)){
+
         }
     }
 

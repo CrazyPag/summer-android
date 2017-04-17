@@ -60,7 +60,7 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler  
 
             String str = "";
             if (resp.errCode == 0) str = "success";
-            else if (resp.errCode == -2) str = "用户取消";
+            else if (resp.errCode == -2) str = "鐢ㄦ埛鍙栨秷";
             else str = "failed";
             MainActivity.getInstance().webview.loadUrl("javascript:ReturnForApp('" + str + "')");
             WXPayEntryActivity.this.finish();

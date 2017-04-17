@@ -26,22 +26,22 @@ import android.view.animation.Transformation;
 
 /**
  *
- * ÕÛÏßÍ¼»æÖÆ
+ * æŠ˜çº¿å›¾ç»˜åˆ¶
  */
 
 public class LineChartView extends View{
 
 
-    private Paint rectPaint;// ÉèÖÃ×ó²àÎª°×É«£¬ÏÔÊ¾Êı±í
-    private Paint hLinePaint;// ×ø±êÖáË®Æ½ÄÚ²¿ ĞéÏß»­±Ê
-    private Paint titlePaint;// »æÖÆÎÄ±¾µÄ»­±Ê
+    private Paint rectPaint;// è®¾ç½®å·¦ä¾§ä¸ºç™½è‰²ï¼Œæ˜¾ç¤ºæ•°è¡¨
+    private Paint hLinePaint;// åæ ‡è½´æ°´å¹³å†…éƒ¨ è™šçº¿ç”»ç¬”
+    private Paint titlePaint;// ç»˜åˆ¶æ–‡æœ¬çš„ç”»ç¬”
     private Paint linePaint;
-    private Paint paint;// ¾ØĞÎ»­±Ê Öù×´Í¼µÄÑùÊ½ĞÅÏ¢
-    private int[] text;// ÕÛÏßµÄ×ªÕÛµã
+    private Paint paint;// çŸ©å½¢ç”»ç¬” æŸ±çŠ¶å›¾çš„æ ·å¼ä¿¡æ¯
+    private int[] text;// æŠ˜çº¿çš„è½¬æŠ˜ç‚¹
     int x, y, preX, preY;
-    // ×ø±êÖá×ó²àµÄÊı±ê
+    // åæ ‡è½´å·¦ä¾§çš„æ•°æ ‡
     private Bitmap mBitmap;
-    // ×ø±êÖáµ×²¿µÄÈÕÆÚ
+    // åæ ‡è½´åº•éƒ¨çš„æ—¥æœŸ
     private String[] str = { "001", "001", "001", "001", "001", "001", "001",
             "001", "001" };
 
@@ -83,18 +83,18 @@ public class LineChartView extends View{
         Rect bundle2 = new Rect();
         hLinePaint = new Paint();
 
-        int perWidth = getWidth() / 10;// ½«¿í¶È·ÖÎª10²¿·Ö
-        int hPerHeight = getHeight() / 10;// ½«¸ß¶È·ÖÎª10²¿·Ö
+        int perWidth = getWidth() / 10;// å°†å®½åº¦åˆ†ä¸º10éƒ¨åˆ†
+        int hPerHeight = getHeight() / 10;// å°†é«˜åº¦åˆ†ä¸º10éƒ¨åˆ†
         rectPaint.setColor(Color.WHITE);
 
-        canvas.drawRect(0, 0, dp2px(30), getHeight(), rectPaint);// »­Ò»¿é°×É«ÇøÓò
+        canvas.drawRect(0, 0, dp2px(30), getHeight(), rectPaint);// ç”»ä¸€å—ç™½è‰²åŒºåŸŸ
 
-        Path path = new Path();// ÕÛÏßÍ¼µÄÂ·¾¶
+        Path path = new Path();// æŠ˜çº¿å›¾çš„è·¯å¾„
         mBitmap = Bitmap.createBitmap(getWidth(), getHeight(),
                 Bitmap.Config.ARGB_8888);
         Canvas mCanvas = new Canvas(mBitmap);
 
-        for (int i = 0; i < 10; i++) {// »­xÏß£¬²¢ÔÚ×ó²àÏÔÊ¾ÏàÓ¦µÄÊıÖµ
+        for (int i = 0; i < 10; i++) {// ç”»xçº¿ï¼Œå¹¶åœ¨å·¦ä¾§æ˜¾ç¤ºç›¸åº”çš„æ•°å€¼
             hLinePaint.setTextAlign(Align.CENTER);
             hLinePaint.setColor(Color.WHITE);
             y = i * hPerHeight;
@@ -165,7 +165,7 @@ public class LineChartView extends View{
     }
 
     /**
-     * ¼¯³ÉanimationµÄÒ»¸ö¶¯»­Àà
+     * é›†æˆanimationçš„ä¸€ä¸ªåŠ¨ç”»ç±»
      *
      * @author
      */
